@@ -15,7 +15,10 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def search(name)
-    @s = Student.find(name: name)
-    redirect_to "show/#{s.id}"
+    if !name
+      Student.all
+    else
+      @s = Student.find(name: name)
+    end
   end
 end
