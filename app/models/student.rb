@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     if !name
       Student.all
     else
-      @s = Student.find(name: name)
+      @s = Student.find(conditions: {name: name})
     end
   end
 end
