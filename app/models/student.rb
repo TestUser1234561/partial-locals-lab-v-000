@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     if name == ''
       Student.all
     else
-      where('NAME like ?', "%#{query}%")
+      where('NAME like ?', "%#{name}%")
     end
   end
 end
