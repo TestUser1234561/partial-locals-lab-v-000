@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     if name == ''
       Student.all
     else
-      @s = Student.find_by(name: name)
+    return Student.find_by(name: name)
     end
   end
 end
